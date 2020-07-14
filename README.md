@@ -1,4 +1,27 @@
-## Welcome to GitHub Pages
+# Topic:Fake news Detection
+ Batch 2.
+ By : Faaizathul Arfa
+
+***Problem Defination:***
+
+Developing a machine learning project to distinguish fake news from a real one.we can use supervised learning to implement the model.
+ 
+***Introduction:***
+
+The topic of fake news detection on social media has recently attracted tremendous attention. The basic countermeasure of comparing websites against a list of labeled fake news sources is inflexible, and so a machine learning approach is desirable. Our project aims to use detect fake news directly, based on the text content of news articles.
+ 
+***Steps involved:***
+ 
+ 1. Analysing the dataset and cleanig the data.
+ 
+ 2. Data preparing.
+ 
+ 3. Building the machine learning models.
+ 
+ 4. evaluating the models for better accuracy.
+
+### models used for classification:
+# 1.
 
 You can use the [editor on GitHub](https://github.com/Faaizathul-arfa/my_project/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
