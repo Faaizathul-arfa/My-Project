@@ -19,9 +19,30 @@ The topic of fake news detection on social media has recently attracted tremendo
  3. Building the machine learning models.
  
  4. evaluating the models for better accuracy.
+ 
+## 1. Analysing the dataset and cleanig the data.
+Dataset is in filename.csv form is read and displayed to get the idea of labels .first few lines of the file are displayed 
+```
+df=pd.read_csv('/content/news.csv')
+df.head()
+```
+```
+labels=df.label
+print(labels.head())
+```
+## 2.Data preparation
+splitting dataset arrays into two subsets.that is train and test set.This for training the model and test the accuracy.The test size is taken as 0.33
+
+```
+from sklearn.model_selection import train_test_split
+X=df['text']
+y=labels
+X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.33)
+```
+
 
 ### models used for classification:
-# 1.
+### 1.
 
 You can use the [editor on GitHub](https://github.com/Faaizathul-arfa/my_project/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
