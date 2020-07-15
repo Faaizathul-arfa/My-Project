@@ -54,7 +54,56 @@ tfidf_test=tfidf_vectorizer.transform(X_test)
 
 
 ### models used for classification:
-### 1.
+**1.passive Agressive Classifier**
+
+The algorithm used for classification here PassiveAgressiveClassifier .Initializing the PassiveAgressiveClassifier and then fit this to tfidf_train and y_train.
+```
+pac = PassiveAggressiveClassifier(50) 
+pac.fit(tfidf_train, y_train)
+pred1 = pac.predict(tfidf_test)
+```
+printing the confusion matrix obtained by above model
+```
+from sklearn.metrics import confusion_matrix
+print(confusion_matrix(y_test,pred1))
+```
+and determing the acccuracy as below
+```
+from sklearn.metrics import accuracy_score
+print(accuracy_score(y_test,pred1))
+```
+similarly getting the classification report
+```
+from sklearn.metrics import classification_report
+print(classification_report(y_test,pred1))
+```
+**2.Logistic Regression**
+
+
+**3.Naive Bayes Classifier**
+
+Naive Bayes classifier is standard Algorithm for classification for text-based data science projects.Naïve Bayes is a conditional probability model which can be used for labeling.The Naïve Bayes rule is based on the theorem formulated by Bayes:
+            
+            
+```
+nb_classifier = MultinomialNB(30)
+nb_classifier.fit(tfidf_train, y_train)
+pred2 = nb_classifier.predict(tfidf_test)
+```
+Following the same as above to get the confusion matrix ,accuracy and classification report
+```
+from sklearn.metrics import confusion_matrix
+print(confusion_matrix(y_test,pred2))
+```
+```
+from sklearn.metrics import accuracy_score
+print(accuracy_score(y_test,pred2))
+```
+```
+from sklearn.metrics import classification_report
+print(classification_report(y_test,pred2))
+```
+
 
 You can use the [editor on GitHub](https://github.com/Faaizathul-arfa/my_project/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
