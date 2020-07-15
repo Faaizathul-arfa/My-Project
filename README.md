@@ -2,15 +2,15 @@
  Batch 2.
  By : Faaizathul Arfa
 
-***Problem Defination:***
+## Problem Defination:
 
 Developing a machine learning project to distinguish fake news from a real one.we can use supervised learning to implement the model.
  
-***Introduction:***
+## Introduction:
 
 The topic of fake news detection on social media has recently attracted tremendous attention. The basic countermeasure of comparing websites against a list of labeled fake news sources is inflexible, and so a machine learning approach is desirable. Our project aims to use detect fake news directly, based on the text content of news articles.
  
-***Steps involved:***
+## Steps involved:
  
  1. Analysing the dataset and cleanig the data.
  
@@ -20,7 +20,7 @@ The topic of fake news detection on social media has recently attracted tremendo
  
  4. evaluating the models for better accuracy.
  
-## 1. Analysing the dataset and cleanig the data.
+**1. Analysing the dataset and cleanig the data.**
 Dataset is in filename.csv form is read and displayed to get the idea of labels .first few lines of the file are displayed 
 ```
 df=pd.read_csv('/content/news.csv')
