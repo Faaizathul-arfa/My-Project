@@ -3,6 +3,9 @@
  
  By : Faaizathul Arfa
  
+ ## Overview
+ 
+ Machine learning Based Minor Project, which uses various classification Algorithms to classify the news into FAKE/REAL, on the basis of their Title and Body-Content. Algorithms like PassiveAgressiveClassifier, Logistic Regression,Naives Bayes, and SVM. It gave 93% accuracy.
  
  ![Image](https://www.arabianbusiness.com/public/styles/full_img/public/images/2018/05/18/fake-news.jpg?itok=2c5POe8V)
 
@@ -154,6 +157,7 @@ print(accuracy_score(y_test,pred1))
 from sklearn.metrics import confusion_matrix
 print(confusion_matrix(y_test,pred1))
  ```
+  output is
 ```
 [[979  60]
  [ 72 980]]
