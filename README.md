@@ -1,14 +1,16 @@
-# Topic:Fake news Detection
+# Fake news Detection
  Batch 2.
+ 
  By : Faaizathul Arfa
 
 ## Problem Defination:
 
-Developing a machine learning project to distinguish fake news from a real one.we can use supervised learning to implement the model.
+Developing a machine learning project to distinguish fake news from a real one.we can use supervised learning to implement the model.Using sklearn, building a TfidfVectorizer on our dataset. Then,initializing a PassiveAggressive Classifier and fit the model. In the end, the accuracy score and the confusion matrix tell us how well the model fares.
  
 ## Introduction:
 
 The topic of fake news detection on social media has recently attracted tremendous attention. The basic countermeasure of comparing websites against a list of labeled fake news sources is inflexible, and so a machine learning approach is desirable. Our project aims to use detect fake news directly, based on the text content of news articles.
+    
  
 ## Steps involved:
  
@@ -20,7 +22,8 @@ The topic of fake news detection on social media has recently attracted tremendo
  
  4. evaluating the models for better accuracy.
  
-**1. Analysing the dataset and cleanig the data.**
+### 1. Analysing the dataset and cleanig the data
+
 Dataset is in filename.csv form is read and displayed to get the idea of labels .first few lines of the file are displayed 
 ```
 df=pd.read_csv('/content/news.csv')
@@ -30,7 +33,7 @@ df.head()
 labels=df.label
 print(labels.head())
 ```
-## 2.Data preparation
+### 2.Data preparation
 splitting dataset arrays into two subsets.that is train and test set.This for training the model and test the accuracy.The test size is taken as 0.33
 
 ```
@@ -38,6 +41,15 @@ from sklearn.model_selection import train_test_split
 X=df['text']
 y=labels
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.33)
+```
+Initializing the TfidfVectorizer with stop words with maximum document frequency 0.8  .stopwords are the unneccasery words that needs to be filtered before processing natural langauage data.The job of TfidfVectorizer is to turn a collection of raw data into a TF-IDF matrix
+
+next, fit and transform the vectorizer on the train set and transform the vectorizer on the test set 
+```
+from sklearn.feature_extraction.text import TfidfVectorizer
+tfidf_vectorizer=TfidfVectorizer(stop_words='english', max_df=0.8)
+tfidf_train=tfidf_vectorizer.fit_transform(X_train) 
+tfidf_test=tfidf_vectorizer.transform(X_test)
 ```
 
 
