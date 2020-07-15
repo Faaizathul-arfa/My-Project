@@ -61,7 +61,8 @@ tfidf_test=tfidf_vectorizer.transform(X_test)
 ```
 
 
-### models used for classification:
+### 3.models used for classification
+
 **1.passive Agressive Classifier**
 
 The algorithm used for classification here PassiveAgressiveClassifier .Initializing the PassiveAgressiveClassifier and then fit this to tfidf_train and y_train.
@@ -163,9 +164,4 @@ print(confusion_matrix(y_test,pred1))
  [ 72 980]]
 ```
 
- ![Image]()
-
-
-
-
-
+ ![Image]("C:\Users\hp\Desktop\ML\download.png")
