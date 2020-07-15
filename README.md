@@ -2,15 +2,20 @@
  Batch 2.
  
  By : Faaizathul Arfa
+ 
+ 
+ ![Image](https://www.arabianbusiness.com/public/styles/full_img/public/images/2018/05/18/fake-news.jpg?itok=2c5POe8V)
 
 ## Problem Defination:
 
-Developing a machine learning project to distinguish fake news from a real one.we can use supervised learning to implement the model.Using sklearn, building a TfidfVectorizer on our dataset. Then,initializing a PassiveAggressive Classifier and fit the model. In the end, the accuracy score and the confusion matrix tell us how well the model fares.
+Developing a machine learning project to distinguish fake news from a real one.we can use supervised learning to implement the model.Using sklearn, building a TfidfVectorizer on our dataset. Then,initializing a Passive Aggressive Classifier,Naive bayes and fit the model. In the end, the accuracy score and the confusion matrix tell us how well the model fares.
  
 ## Introduction:
 
-The topic of fake news detection on social media has recently attracted tremendous attention. The basic countermeasure of comparing websites against a list of labeled fake news sources is inflexible, and so a machine learning approach is desirable. Our project aims to use detect fake news directly, based on the text content of news articles.
-    
+The topic of fake news detection on social media has recently attracted tremendous attention. The basic countermeasure of comparing websites against a list of labeled fake news sources is inflexible, and so a machine learning approach is desirable. Our project aims to use detect fake news directly, based on the text content of news articles
+
+
+ ![Image](https://www.pantechsolutions.net/media/wysiwyg/ML/twitter_fake_news_3.jpg)
  
 ## Steps involved:
  
@@ -79,10 +84,23 @@ print(classification_report(y_test,pred1))
 ```
 **2.Logistic Regression**
 
+Logistic regression is another technique borrowed by machine learning from the field of statistics. It is the method for binary classification problems (problems with two class values).Here we initialize the logisitic regression and then fit this to tfidf_train and y_train.
+
+```
+from sklearn.linear_model import LogisticRegression
+lr=LogisticRegression()
+lr.fit(tfidf_train,y_train)
+pred3=lr.predict(tfidf_test)
+```
+```
+print(accuracy_score(y_test,pred3))
+print(confusion_matrix(y_test,pred3))
+print(classification_report(y_test,pred3))
+```
 
 **3.Naive Bayes Classifier**
 
-Naive Bayes classifier is standard Algorithm for classification for text-based data science projects.Naïve Bayes is a conditional probability model which can be used for labeling.The Naïve Bayes rule is based on the theorem formulated by Bayes:
+Naive Bayes classifier is standard Algorithm for classification for text-based data science projects.Naïve Bayes is a conditional probability model which can be used for labeling.The Naïve Bayes rule is based on the theorem formulated by Bayes.
             
             
 ```
@@ -103,6 +121,24 @@ print(accuracy_score(y_test,pred2))
 from sklearn.metrics import classification_report
 print(classification_report(y_test,pred2))
 ```
+**4.support vector machine model**
+
+SVM is a supervised machine learning algorithm which can be used for classification or regression problems. It uses a technique called the kernel trick to transform your data and then based on these transformations it finds an optimal boundary between the possible outputs.
+initialize the logisitic regression and then fit this to tfidf_train and y_train.
+```
+from sklearn.svm import SVC
+clf=SVC()
+clf.fit(tfidf_train,y_train)
+pred4=clf.predict(tfidf_test)
+```
+```
+print(accuracy_score(y_test,pred4))
+print(confusion_matrix(y_test,pred4))
+print(classification_report(y_test,pred4))
+```
+
+
+
 
 
 You can use the [editor on GitHub](https://github.com/Faaizathul-arfa/my_project/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
