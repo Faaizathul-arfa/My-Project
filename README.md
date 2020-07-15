@@ -138,7 +138,28 @@ print(classification_report(y_test,pred4))
 ```
 ## 4. evaluating the models for better accuracy.
 
- I got highest accuracy in the passive agressive classifier out of the above foue models that is 0.936
+ I got highest accuracy in the passive agressive classifier out of the above four models that is 0.936
+ 
+ - accuracy is
+ ```
+from sklearn.metrics import accuracy_score
+print(accuracy_score(y_test,pred1))
+ ```
+ output is
+ ```
+ 0.9368723098995696
+ ```
+ - confusion matrix
+ ```
+from sklearn.metrics import confusion_matrix
+print(confusion_matrix(y_test,pred1))
+ ```
+```
+[[979  60]
+ [ 72 980]]
+```
+
+ ![Image]()
 
 
 
