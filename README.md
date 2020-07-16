@@ -4,7 +4,7 @@
  By : Faaizathul Arfa
  
  
- ## Overview:
+## Overview:
  
 Machine learning Based Minor Project, which uses various classification Algorithms to classify the news into FAKE/REAL, on the basis of their Title and Body-Content. Data  uses  algorithms like PassiveAgressiveClassifier,Naives Bayes,Logistic Regression and SVM. It gave 94% accuracy.
  
