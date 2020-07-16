@@ -2,15 +2,16 @@
  Batch 2.
  
  By : Faaizathul Arfa
- ## overview
+ 
+ ## overview:
  Machine learning Based Minor Project, which uses various classification Algorithms to classify the news into FAKE/REAL, on the basis of their Title and Body-Content. Data  uses algorithms like PassiveAgressiveClassifier,Naives Bayes,Logistic Regression and SVM. It gave 94% accuracy.
  
- 
- ![Image](https://www.arabianbusiness.com/public/styles/full_img/public/images/2018/05/18/fake-news.jpg?itok=2c5POe8V)
+
+ <div style="text-align:center"><img src="https://www.arabianbusiness.com/public/styles/full_img/public/images/2018/05/18/fake-news.jpg?itok=2c5POe8V"  width="550" height="350"></div>
 
 ## Problem Defination:
 
-Developing a machine learning project to distinguish fake news from a real one.we can use supervised learning to implement the model.Using sklearn, building a TfidfVectorizer on our dataset. Then,initializing a Passive Aggressive Classifier,Naive bayes,logistic regresssion,SVM and fit the model. In the end, the accuracy score and the confusion matrix tell us how well the model fares.
+Developing a machine learning project to distinguish fake news from a real one.we can use supervised learning to implement the model.Using sklearn, building a TfidfVectorizer on our dataset. Then,initializing a Passive Aggressive Classifier,Naive bayes,logistic regresssion,SVM and fit the model. In the end, the accuracy score and the confusion matrix tells us how well the model fares.
  
 ## Introduction:
 
@@ -41,7 +42,7 @@ labels=df.label
 print(labels.head())
 ```
 ### 2.Data preparation
-splitting dataset arrays into two subsets.that is train and test set.This for training the model and test the accuracy.The test size is taken as 0.33
+splitting dataset arrays into two subsets that is train and test set.This for training the model and testing the accuracy.The test size is taken as 0.33
 
 ```
 from sklearn.model_selection import train_test_split
@@ -58,9 +59,42 @@ tfidf_vectorizer=TfidfVectorizer(stop_words='english', max_df=0.8)
 tfidf_train=tfidf_vectorizer.fit_transform(X_train) 
 tfidf_test=tfidf_vectorizer.transform(X_test)
 ```
-
+We can also use CountVectorizer,that is used to convert a collection of text documents to a vector of term/token counts and then compare withTF-IDF vector to check whether they are same.The code is as follows:
+```
+from sklearn.feature_extraction.text import CountVectorizer
+count_vectorizer = CountVectorizer(stop_words='english')
+count_train = count_vectorizer.fit_transform(X_train)
+count_test = count_vectorizer.transform(X_test)
+```
+```
+count_df = pd.DataFrame(count_train.A, columns=count_vectorizer.get_feature_names())
+print(count_df.head())
+```
+similarly for tf-idf vector:
+```
+tfidf_df = pd.DataFrame(tfidf_train.A, columns=tfidf_vectorizer.get_feature_names())
+print(tfidf_df.head())
+```
+and then comparing by checking the no of columns ,however number of columns is same in my case but contents are not that is determined by:
+```
+difference = set(count_df.columns) - set(tfidf_df.columns)
+print(difference)
+```
+output:
+```
+set()
+```
+Checking both the vectors equal or not:
+```
+print(count_df.equals(tfidf_df))
+```
+output:
+```
+False
+```
 
 ### models used for classification:
+
 **1.passive Agressive Classifier**
 
 The algorithm used for classification here PassiveAgressiveClassifier .Initializing the PassiveAgressiveClassifier and then fit this to tfidf_train and y_train.
@@ -83,6 +117,7 @@ similarly getting the classification report
 ```
 from sklearn.metrics import classification_report
 print(classification_report(y_test,pred1))
+
 ```
 **2.Logistic Regression**
 
@@ -123,6 +158,7 @@ print(accuracy_score(y_test,pred2))
 from sklearn.metrics import classification_report
 print(classification_report(y_test,pred2))
 ```
+
 **4.support vector machine model**
 
 SVM is a supervised machine learning algorithm which can be used for classification or regression problems. It uses a technique called the kernel trick to transform your data and then based on these transformations it finds an optimal boundary between the possible outputs.
@@ -138,6 +174,7 @@ print(accuracy_score(y_test,pred4))
 print(confusion_matrix(y_test,pred4))
 print(classification_report(y_test,pred4))
 ```
+
 ## 4. evaluating the models for better accuracy.
 
  I got highest accuracy in the passive agressive classifier out of the above four models that is 0.94 as shown below :
