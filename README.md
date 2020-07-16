@@ -3,7 +3,7 @@
  
  By : Faaizathul Arfa
  ## overview
- Machine learning Based Minor Project, which uses various classification Algorithms to classify the news into FAKE/REAL, on the basis of their Title and Body-Content. Data  uses algorithms like PassiveAgressiveClassifier,Naives Bayes,Logistic Regression and SVM. It gave 93% accuracy.
+ Machine learning Based Minor Project, which uses various classification Algorithms to classify the news into FAKE/REAL, on the basis of their Title and Body-Content. Data  uses algorithms like PassiveAgressiveClassifier,Naives Bayes,Logistic Regression and SVM. It gave 94% accuracy.
  
  
  ![Image](https://www.arabianbusiness.com/public/styles/full_img/public/images/2018/05/18/fake-news.jpg?itok=2c5POe8V)
@@ -140,14 +140,14 @@ print(classification_report(y_test,pred4))
 ```
 ## 4. evaluating the models for better accuracy.
 
- I got highest accuracy in the passive agressive classifier out of the above four models that is 0.936 as shown below :
+ I got highest accuracy in the passive agressive classifier out of the above four models that is 0.94 as shown below :
  ```
  from sklearn.metrics import accuracy_score
 print(accuracy_score(y_test,pred1))
  ```
  whose output is:
  ```
- 0.9368723098995696
+0.9426111908177905
  ```
  ```
  from sklearn.metrics import confusion_matrix
@@ -155,8 +155,8 @@ print(accuracy_score(y_test,pred1))
 ```
 whose output is:
 ```
-[[979  60]
- [ 72 980]]
+[[1025   44]
+ [  76  946]]
 ```
 - To plot confusion matrix:
 ```
