@@ -1,9 +1,10 @@
 # Fake News Detection
- Batch 2.
- 
- By : Faaizathul Arfa
-      NMAMIT nitte
- 
+By :
+
+Faaizathul Arfa
+NMAMIT nitte
+
+Batch 2. 
  
 ## Overview:
  
